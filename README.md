@@ -31,6 +31,9 @@ answer = llm(masked)                 # 가린 글만 밖으로 보냅니다
 print(det.restore(answer, table))    # 대응표로 원래 값 복원
 ```
 
+Windows에서 받을 위치를 직접 정하려면 `cache_dir` 대신 `local_dir`를 쓰세요. 일반 사용자 계정은 캐시의 심볼릭 링크를 만들
+권한이 없어 오류(WinError 1314)가 날 수 있습니다: `snapshot_download("locon-team/ko-pii-mask-base", local_dir="models/ko-pii-mask-base")`.
+
 `det.detect(text)`는 `[{"label", "start", "end", "text", "score"}, ...]`를 돌려줍니다.
 `PiiDetector(None)`은 모델 없이 규칙(번호 꼴·체크섬)만 씁니다.
 
