@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ko-pii-mask"
+version = "0.1.0"
+description = "Korean PII detection and pseudonymization that runs on-device (ONNX Runtime, no PyTorch)"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+dependencies = ["onnxruntime>=1.17", "tokenizers>=0.15", "numpy>=1.24"]
+
+[tool.setuptools]
+packages = ["ko_pii_mask"]
